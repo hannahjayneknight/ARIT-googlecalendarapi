@@ -23,3 +23,11 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+
+# client secrets
+
+vendor/
+
+client_secrets\.json
+
+\.vscode/
