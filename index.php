@@ -3,6 +3,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 session_start();
 
+// building the client object
 $client = new Google_Client();
 $client->setAuthConfig('client_secrets.json');
 $client->addScope(Google_Service_Calendar::CALENDAR_READONLY);
@@ -19,6 +20,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
     'timeMin' => date('c'),
   );
   
+  // creating the service object
   $service = new Google_Service_Calendar($client);
   $results = $service->events->listEvents($calendarId, $optParams);
 
